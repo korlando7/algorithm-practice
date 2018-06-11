@@ -1,11 +1,9 @@
 const binarySearch = (arr, key) => {
-  let found = false;
-
   if (arr.length < 2) {
-    if (arr[0] === key) found = true;
+    if (arr[0] === key) return true;
   } else if (key < arr[0] || key > arr[arr.length - 1]) {
     return false;
-  } else if (key === arr[0] || key === arr[arr.length -1]) {
+  } else if (key === arr[0] || key === arr[arr.length - 1]) {
     return true;
   }
   const midpoint = Math.floor(arr.length / 2);
@@ -21,6 +19,4 @@ const binarySearch = (arr, key) => {
   return false;
 };
 
-const sortedArr = [0, 1, 2, 3, 5, 6, 7, 8, 9];
-
-console.log(binarySearch(sortedArr, 4));
+module.exports = binarySearch;
